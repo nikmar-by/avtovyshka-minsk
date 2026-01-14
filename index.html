@@ -185,18 +185,19 @@ background: #cbd5e1;
 border-radius: 4px;
 }
 .carousel-item {
-scroll-snap-align: start;
-flex: 0 0 calc(100% - 2rem);
-min-width: 280px;
-height: 300px;
-border-radius: 1rem;
-overflow: hidden;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+  flex: 0 0 auto;        /* 1. Карточка не растягивается, а берет авто-ширину */
+  width: auto;           /* 2. Ширина зависит от содержимого */
+  height: 300px;         /* Высота остается фиксированной */
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .carousel-item img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+  height: 100%;         /* Заполни всю высоту (300px) */
+  width: auto;          /* Ширина подберется автоматически по пропорции фото */
+  object-fit: contain;  /* На всякий случай, но с width:auto оно и так будет целым */
+  display: block;       /* Убирает лишние отступы снизу */
 }
 footer {
 background: var(--gray-900);
@@ -307,7 +308,6 @@ min-width: 240px;
 <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
 <div class="contact-info">
 <a href="tel:+375296118194" class="phone">+375 (29) 611-81-94</a>
-<div class="schedule">Круглосуточно</div>
 </div>
 </div>
 </div>
@@ -385,26 +385,28 @@ min-width: 240px;
       <div class="divider" style="background: var(--yellow-500);"></div>
       <div class="carousel">
         <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_1" alt="Фасадные работы">
+          <img src="img/avtovyshka-minsk_1.jpg" alt="Фасадные работы">
         </div>
         <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_2" alt="Мойка витрин">
+          <img src="img/avtovyshka-minsk_2.jpg" alt="Мойка витрин">
         </div>
         <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_3" alt="Спил деревьев">
+          <img src="img/avtovyshka-minsk_3.jpg" alt="Спил деревьев">
         </div>
         <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_4" alt="Монтаж рекламы">
+          <img src="img/avtovyshka-minsk_4.jpg" alt="Монтаж рекламы">
         </div>
         <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_7" alt="Монтаж антенн">
+          <img src="img/avtovyshka-minsk_7.jpg" alt="Монтаж антенн">
         </div>
         <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_8" alt="Ремонт кровли">
+          <img src="img/avtovyshka-minsk_8.jpg" alt="Ремонт кровли">
+		</div>
 		  <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_9" alt="Установка видеонаблюдения">
+          <img src="img/avtovyshka-minsk_9.jpg" alt="Установка видеонаблюдения">
+		</div>
 		  <div class="carousel-item">
-          <img src="img/avtovyshka-minsk_10" alt="Установка кондиционеров">
+          <img src="img/avtovyshka-minsk_10.jpg" alt="Установка кондиционеров">
         </div>
       </div>
     </div>
@@ -417,7 +419,7 @@ min-width: 240px;
 <p class="section-subtitle">Идеальна для 4–5 этажных зданий</p>
 <div class="divider" style="background: var(--blue-600);"></div>
 <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-<img src="img/avtovyshka-minsk_6" alt="Автовышка 17 метров в Минске" style="width: 100%; height: 320px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem;">
+<img src="img/avtovyshka-minsk_6.jpg" alt="Автовышка 17 метров в Минске" style="width: 100%; height: 320px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem;">
 <h3>Автогидроподъёмник — 17 метров</h3>
 <p>Современная техника в отличном состоянии с опытным водителем-оператором.</p>
 <ul style="list-style: none; padding: 0; margin: 1.5rem 0; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto;">
