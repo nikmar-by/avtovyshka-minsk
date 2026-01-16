@@ -92,6 +92,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .logo {
   display: flex;
@@ -333,16 +334,35 @@ footer {
 .mobile-menu.active { display: block; }
 .mobile-menu a { display: block; padding: 0.75rem; text-decoration: none; color: var(--text-main); border-bottom: 1px solid #f3f4f6; }
 @media (max-width: 768px) {
-  .logo img { height: 40px; } /* Лого 40px на мобильных */
+  .logo img { height: 40px; }
   .logo h1 { font-size: 1rem; }
   .nav-links { display: none; }
-  .mobile-menu-btn { display: block; }
-  .equipment-wrapper { grid-template-columns: 1fr; padding: 1.5rem; } /* Техника в колонку на тел */
+  
+  .mobile-menu-btn { 
+    display: block; 
+    margin-left: auto; 
+  }
+
+  .contact-info {
+    width: 100%;
+    text-align: right;
+    margin-top: 0; /* БЫЛО: 0.5rem. СТАЛО: 0 (убрали отступ сверху) */
+    order: 3;
+    line-height: 1.2; /* Делаем высоту строки компактнее */
+  }
+  
+  .contact-info .phone {
+    color: var(--primary);
+    /* Можно немного уменьшить шрифт, если нужно, например: font-size: 1rem; */
+  }
+
+  .equipment-wrapper { grid-template-columns: 1fr; padding: 1.5rem; }
   .equipment-img { height: 220px; }
   .section-title { font-size: 1.75rem; }
   section { padding: 2.5rem 0; }
-  .grid-cards { grid-template-columns: 1fr; } /* Одна колонка на тел */
+  .grid-cards { grid-template-columns: 1fr; }
 }
+
 </style>
 </head>
 <body>
@@ -587,11 +607,11 @@ footer {
 <div style="display: inline-block; text-align: left; background: var(--bg-light); padding: 2rem; border-radius: 1rem; border: 1px solid #e5e7eb; box-shadow: var(--shadow);">
 <div style="margin-bottom: 1.5rem;">
 <span style="display: block; font-size: 0.9rem; color: var(--text-light);">Телефон для связи:</span>
-<a href="tel:+375296118194" style="font-size: 1.75rem; font-weight: 800; color: var(--text-main); text-decoration: none;">+375 (29) 611-81-94</a>
+<a href="tel:+375296118194" style="font-size: 1.25rem; font-weight: 500; color: var(--text-main); text-decoration: none;">+375 (29) 611-81-94</a>
 </div>
 <div style="margin-bottom: 1.5rem;">
 <span style="display: block; font-size: 0.9rem; color: var(--text-light);">Email:</span>
-<a href="mailto:val.val2005@mail.ru" style="font-size: 1.25rem; color: var(--primary); text-decoration: none; font-weight: 600;">val.val2005@mail.ru</a>
+<a href="mailto:val.val2005@mail.ru" style="font-size: 1rem; color: var(--primary); text-decoration: none; font-weight: 600;">val.val2005@mail.ru</a>
 </div>
 <div style="border-top: 1px solid #cbd5e1; padding-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
 <strong>ИП Герасимёнок В.В.</strong><br>
